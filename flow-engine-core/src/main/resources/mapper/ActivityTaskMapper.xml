@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.wty.flowengine.engine.domain.mapper.ActivityTaskMapper">
+    <resultMap id="BaseResultMap" type="com.wty.flowengine.engine.domain.ActivityTask">
+        <id column="id" property="id"/>
+        <result property="procInstId" column="proc_inst_id"/>
+        <result property="executionId" column="execution_id"/>
+        <result property="activityId" column="activity_id"/>
+        <result property="activityName" column="activity_name"/>
+    </resultMap>
+    <insert id="save">
+        insert into flow_activity_task(id, proc_inst_id, execution_id, activity_id, activity_name)
+        values (#{id}, #{procInstId}, #{executionId}, #{activityId}, #{activityName})
+        on duplicate key update proc_inst_id  = #{procInstId},
+                                execution_id  = #{executionId},
+                                activity_id   = #{activityId},
+                                activity_name = #{activityName};
+    </insert>
+</mapper>

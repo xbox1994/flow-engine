@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/flowengine
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  groovy.template.check-template-location: false
+
+
+
+logging:
+  level:
+    root: info
+    org.springframework.web.filter: info
+    com.lucifer.springboot.cache.mapper: info
+    com.wty.flowengine.engine.runtime.agenda: debug
+

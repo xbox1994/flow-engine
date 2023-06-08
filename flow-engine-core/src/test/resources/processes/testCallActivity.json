@@ -1,0 +1,43 @@
+{
+  "type": "PROCESS",
+  "id": "testCallActivity",
+  "name": "测试调用子流程",
+  "elements": [
+    {
+      "type": "START",
+      "id": "start",
+      "name": "开始节点",
+      "config": {}
+    },
+    {
+      "type": "CALL_ACTIVITY",
+      "id": "callActivity",
+      "name": "调用节点",
+      "config": {
+        "processId": "testNodeTx"
+      }
+    },
+    {
+      "type": "END",
+      "id": "end",
+      "name": "结束节点",
+      "config": {}
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_1",
+      "name": "",
+      "sourceId": "start",
+      "targetId": "callActivity",
+      "config": {}
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_2",
+      "name": "",
+      "sourceId": "callActivity",
+      "targetId": "end",
+      "config": {}
+    }
+  ]
+}

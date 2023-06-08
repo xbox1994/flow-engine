@@ -1,0 +1,43 @@
+{
+  "type": "PROCESS",
+  "id": "testUserTask",
+  "name": "测试UserTask",
+  "elements": [
+    {
+      "type": "START",
+      "id": "start",
+      "name": "开始节点",
+      "config": {}
+    },
+    {
+      "type": "USER_TASK",
+      "id": "userTask1",
+      "name": "人工节点",
+      "config": {}
+    },
+    {
+      "type": "END",
+      "id": "end",
+      "name": "结束节点",
+      "config": {}
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_1",
+      "name": "",
+      "sourceId": "start",
+      "targetId": "userTask1",
+      "config": {
+      }
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_2",
+      "name": "",
+      "sourceId": "userTask1",
+      "targetId": "end",
+      "config": {
+      }
+    }
+  ]
+}

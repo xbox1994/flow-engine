@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wty.flowengine.engine.domain.mapper.ResourceMapper">
+    <resultMap id="BaseResultMap" type="com.wty.flowengine.engine.domain.Resource">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="deploymentId" column="deployment_id"/>
+        <result property="bytes" column="bytes"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.wty.flowengine.engine.domain.Resource">
+        insert into flow_resource (id, `name`, deployment_id, bytes)
+        VALUES (#{id}, #{name}, #{deploymentId}, #{bytes});
+    </insert>
+    <delete id="deleteByDeploymentId">
+        delete
+        from flow_resource
+        where deployment_id = #{arg0}</delete>
+</mapper>

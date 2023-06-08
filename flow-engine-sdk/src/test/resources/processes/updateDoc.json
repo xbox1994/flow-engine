@@ -1,0 +1,105 @@
+{
+  "type": "PROCESS",
+  "id": "updateDocument",
+  "name": "更新文档",
+  "elements": [
+    {
+      "type": "START",
+      "id": "start",
+      "name": "开始节点",
+      "config": {}
+    },
+    {
+      "type": "DECISION",
+      "id": "decisionByRole",
+      "name": "判断",
+      "config": {
+        "defaultFlowId": "seq_3"
+      }
+    },
+    {
+      "type": "SERVICE_TASK",
+      "id": "setApproveInfo",
+      "name": "设置审核信息",
+      "config": {
+        "implementation": "Groovy",
+        "script": "data.approval_status = '4'\n data.approval_opinion = \"同意\"\n  data.approval_user = session.employeeNo\n  data.approval_date = System.currentTimeMillis()"
+      }
+    },
+    {
+      "type": "SERVICE_TASK",
+      "id": "tobeApproved",
+      "name": "待审核",
+      "config": {
+        "implementation": "Groovy",
+        "script": "data.approval_status = '2'"
+      }
+    },
+    {
+      "type": "SERVICE_TASK",
+      "id": "saveDocument",
+      "name": "更新文档记录",
+      "config": {
+        "implementation": "JavaClass",
+        "className": "handler.DocumentUpdateHandler"
+      }
+    },
+    {
+      "type": "END",
+      "id": "end",
+      "name": "结束节点",
+      "config": {}
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_1",
+      "name": "",
+      "sourceId": "start",
+      "targetId": "decisionByRole",
+      "config": {
+      }
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_2",
+      "name": "操作人是管理员",
+      "sourceId": "decisionByRole",
+      "targetId": "setApproveInfo",
+      "config": {
+        "condition": "role == 'admin'"
+      }
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_3",
+      "name": "其它",
+      "sourceId": "decisionByRole",
+      "targetId": "tobeApproved",
+      "config": {}
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_4",
+      "name": "",
+      "sourceId": "setApproveInfo",
+      "targetId": "saveDocument",
+      "config": {}
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_5",
+      "name": "",
+      "sourceId": "tobeApproved",
+      "targetId": "saveDocument",
+      "config": {}
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_6",
+      "name": "",
+      "sourceId": "saveDocument",
+      "targetId": "end",
+      "config": {}
+    }
+  ]
+}

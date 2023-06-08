@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wty.flowengine.engine.domain.mapper.DeploymentMapper">
+    <resultMap id="BaseResultMap" type="com.wty.flowengine.engine.domain.Deployment">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="deployTime" column="deploy_time" jdbcType="TIMESTAMP"/>
+        <result property="parentDeploymentId" column="parent_deployment_id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.wty.flowengine.engine.domain.Deployment">
+        insert into `flow_deployment` (`id`, `deploy_time`, `parent_deployment_id`)
+        values (#{id}, #{deployTime}, #{parentDeploymentId});
+    </insert>
+</mapper>

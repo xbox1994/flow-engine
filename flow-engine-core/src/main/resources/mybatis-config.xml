@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.wty.flowengine.engine.domain.Deployment" alias="Deployment"/>
+        <typeAlias type="com.wty.flowengine.engine.domain.Resource" alias="Resource"/>
+        <typeAlias type="com.wty.flowengine.engine.domain.ProcessDefinition" alias="ProcessDefinition"/>
+        <typeAlias type="com.wty.flowengine.engine.domain.ProcessInstance" alias="ProcessInstance"/>
+        <typeAlias type="com.wty.flowengine.engine.domain.ActivityTask" alias="ActivityTask"/>
+        <typeAlias type="com.wty.flowengine.engine.domain.mapper.handler.MapTypeHandler"
+                   alias="MapTypeHandler"/>
+    </typeAliases>
+    <typeHandlers>
+        <typeHandler handler="MapTypeHandler" javaType="java.util.Map" jdbcType="LONGVARCHAR"/>
+    </typeHandlers>
+    <mappers>
+        <!-- 只保留 MyBatis-Plus 的配置项 -->
+    </mappers>
+</configuration>

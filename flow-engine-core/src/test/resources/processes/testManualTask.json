@@ -1,0 +1,47 @@
+{
+  "type": "PROCESS",
+  "id": "testManualTask",
+  "name": "测试在事务内执行活动节点",
+  "elements": [
+    {
+      "type": "START",
+      "id": "start",
+      "name": "开始节点",
+      "config": {}
+    },
+    {
+      "type": "SERVICE_TASK",
+      "id": "task1",
+      "name": "人工触发",
+      "config": {
+        "manual": true,
+        "implementation": "Groovy",
+        "script": "if(ready){\n    println \"Ready!\"\n}else {\n    throw new RuntimeException(\"not ready\")\n}"
+      }
+    },
+    {
+      "type": "END",
+      "id": "end",
+      "name": "结束节点",
+      "config": {}
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_1",
+      "name": "",
+      "sourceId": "start",
+      "targetId": "task1",
+      "config": {
+      }
+    },
+    {
+      "type": "SEQUENCE_FLOW",
+      "id": "seq_2",
+      "name": "",
+      "sourceId": "task1",
+      "targetId": "end",
+      "config": {
+      }
+    }
+  ]
+}

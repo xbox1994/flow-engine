@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wty.flowengine.engine.domain.mapper.ExecutionMapper">
+    <resultMap id="BaseResultMap" type="com.wty.flowengine.engine.domain.Execution">
+        <id property="id" column="id"/>
+        <result property="procInstanceId" column="proc_instance_id"/>
+        <result property="procDefinitionId" column="proc_definition_id"/>
+        <result property="bizId" column="biz_id"/>
+        <result property="activityId" column="activity_id"/>
+        <result property="activityName" column="activity_name"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="variables" column="variables" typeHandler="MapTypeHandler"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.wty.flowengine.engine.domain.Execution">
+        insert into flow_execution (id, proc_instance_id, proc_definition_id, biz_id, activity_id, activity_name, parent_id,
+                                 `variables`)
+        VALUES (#{id}, #{procInstanceId}, #{procDefinitionId}, #{bizId}, #{activityId}, #{activityName}, #{parentId},
+                #{variables, typeHandler=com.wty.flowengine.engine.domain.mapper.handler.MapTypeHandler})
+    </insert>
+    <insert id="save">
+        insert into flow_execution (id, proc_instance_id, proc_definition_id, biz_id, activity_id, activity_name,
+                                 parent_id,
+                                 `variables`)
+        VALUES (#{id}, #{procInstanceId}, #{procDefinitionId}, #{bizId}, #{activityId}, #{activityName}, #{parentId},
+                #{variables, typeHandler=com.wty.flowengine.engine.domain.mapper.handler.MapTypeHandler})
+        on duplicate key update proc_instance_id   = #{procInstanceId},
+                                proc_definition_id = #{procDefinitionId},
+                                biz_id             = #{bizId},
+                                activity_id        = #{activityId},
+                                activity_name      = #{activityName},
+                                parent_id          = #{parentId},
+                                `variables`        = #{variables, typeHandler=com.wty.flowengine.engine.domain.mapper.handler.MapTypeHandler}
+
+    </insert>
+    <select id="countByProcDefID" resultType="java.lang.Integer">
+        select count(*)
+        from flow_execution
+        where proc_definition_id = #{arg0}
+    </select>
+
+</mapper>

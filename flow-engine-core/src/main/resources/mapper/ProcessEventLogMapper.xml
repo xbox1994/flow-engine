@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wty.flowengine.engine.domain.mapper.ProcessEventLogMapper">
+    <resultMap id="BaseResultMap" type="com.wty.flowengine.engine.domain.ProcessEventLog">
+        <id column="id" property="id"/>
+        <result property="procInstId" column="proc_inst_id"/>
+        <result property="executionId" column="execution_id"/>
+        <result property="event" column="event"/>
+        <result property="nodeId" column="node_id"/>
+        <result property="nodeName" column="node_name"/>
+        <result property="time" column="time"/>
+        <result property="exception" column="exception"/>
+        <result property="variables" column="variables" typeHandler="MapTypeHandler"/>
+        <result property="extra" column="extra" typeHandler="MapTypeHandler"/>
+    </resultMap>
+    <insert id="insert">
+        insert into flow_process_event_log (id, proc_inst_id, execution_id, `event`, `node_id`, `node_name`, `time`,
+                                       `exception`,
+                                       `variables`, extra)
+            VALUE (#{id}, #{procInstId}, #{executionId}, #{event}, #{nodeId}, #{nodeName}, #{time}, #{exception},
+                   #{variables, typeHandler=com.wty.flowengine.engine.domain.mapper.handler.MapTypeHandler},
+                   #{extra, typeHandler=com.wty.flowengine.engine.domain.mapper.handler.MapTypeHandler});
+    </insert>
+</mapper>
