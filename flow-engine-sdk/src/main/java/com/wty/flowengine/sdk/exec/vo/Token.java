@@ -1,6 +1,7 @@
 package com.wty.flowengine.sdk.exec.vo;
 
 import com.wty.flowengine.rest.demo.test.model.FlowElement;
+import com.wty.flowengine.rest.demo.test.model.Process;
 import com.wty.flowengine.engine.common.api.VariableScope;
 import lombok.Getter;
 import lombok.Setter;

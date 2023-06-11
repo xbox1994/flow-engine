@@ -1,0 +1,40 @@
+{
+  "type": "PROCESS",
+  "id": "childTestProcess",
+  "name": "测试子流程",
+  "elements": [
+    {
+      "id": "start",
+      "type": "START",
+      "name": "开始节点",
+      "config": {}
+    },
+    {
+      "id": "line_start_to_task4",
+      "name": "",
+      "type": "SEQUENCE_FLOW",
+      "sourceId": "start",
+      "targetId": "task4"
+    },
+    {
+      "id": "task4",
+      "type": "SERVICE_TASK",
+      "name": "任务4",
+      "config": {
+        "implementation": "JavaBean",
+        "beanName": "task4Service"
+      }
+    },
+    {
+      "id": "line_task4_to_end",
+      "type": "SEQUENCE_FLOW",
+      "sourceId": "task4",
+      "targetId": "end"
+    },
+    {
+      "id": "end",
+      "name": "结束节点",
+      "type": "END"
+    }
+  ]
+}

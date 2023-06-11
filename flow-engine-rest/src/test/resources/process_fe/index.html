@@ -1,0 +1,39 @@
+<html>
+    <head>线边拉动需求</head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/@antv/x6/dist/x6.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@antv/layout/dist/layout.min.js"></script>
+    <script src="./js/flow.js"></script>
+    <script src="./js/regist.js"></script>
+    <body>
+        <div id="container"></div>
+        <script>
+            // #region 初始化图形
+
+            const {GridLayout} = window.layout
+            const graph = new X6.Graph({
+              container: document.getElementById('container'),
+              width: 1800,
+              height: 900,
+              background:{
+                color: '#fffbe6',//设置画布颜色
+              }
+            });
+
+            const gridLayout = new GridLayout({
+                type: 'grid',
+                width: 1800,
+                height: 900,
+                center: [900, 450],
+                // rows: 5,
+                // cols: 5,
+                preventOverlap: true,
+                sortBy: 'id'
+            });
+            console.log(data)
+            const newData = gridLayout.layout(data)
+            graph.fromJSON(newData)
+            graph.centerContent()
+          </script>
+    </body>
+</html>

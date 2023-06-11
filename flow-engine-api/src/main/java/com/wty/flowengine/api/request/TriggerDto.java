@@ -1,12 +1,12 @@
 package com.wty.flowengine.api.request;
 
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Map;
 
-@Builder
 @Data
+@NoArgsConstructor
 public class TriggerDto {
 
     private String defKey;

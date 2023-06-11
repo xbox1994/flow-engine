@@ -63,8 +63,10 @@ public class FlowTest {
         BaseResponse<Long> taskResponse = flowClient.getTaskId(TEST_PROCESS, BIZ_ID, NODE_MANUAL_TASK_3);
         if (taskResponse.getCode() == 0 && taskResponse.getBody() != null) {
             Map<String, Object> variables = Maps.newHashMap();
-            TriggerDto triggerDto = TriggerDto.builder().bizId(BIZ_ID).defKey(TEST_PROCESS).variables(variables)
-                .build();
+            TriggerDto triggerDto = new TriggerDto();
+            triggerDto.setBizId(BIZ_ID);
+            triggerDto.setDefKey(TEST_PROCESS);
+            triggerDto.setVariables(variables);
             variables.put("message", "xxxxxxxxxxxxxxxxxxxxxx");
             triggerDto.setNodeId(NODE_MANUAL_TASK_3);
             // 非自动节点专用，执行下一步
