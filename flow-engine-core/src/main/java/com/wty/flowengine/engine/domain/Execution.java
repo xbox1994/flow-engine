@@ -1,8 +1,8 @@
 package com.wty.flowengine.engine.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.wty.flow.model.FlowElement;
-import com.wty.flow.model.SequenceFlow;
+import com.wty.flowengine.rest.demo.test.model.FlowElement;
+import com.wty.flowengine.rest.demo.test.model.SequenceFlow;
 import com.wty.flowengine.engine.ProcessEngineConfiguration;
 import com.wty.flowengine.engine.common.api.VariableScope;
 import com.wty.flowengine.engine.runtime.util.CommandContextUtil;
@@ -71,6 +71,7 @@ public class Execution implements VariableScope {
         execution.setParent(this);
         execution.setCurrentFlowElement(outgoingSequenceFlow);
         execution.setProcessDefinition(this.getProcessDefinition());
+        execution.setProcInstanceId(this.getProcInstanceId());
         return execution;
     }
 

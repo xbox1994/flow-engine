@@ -1,7 +1,7 @@
 package com.wty.flowengine.sdk.exec.util;
 
 import com.googlecode.aviator.AviatorEvaluator;
-import com.wty.flow.model.SequenceFlow;
+import com.wty.flowengine.rest.demo.test.model.SequenceFlow;
 import com.wty.flowengine.engine.common.api.FlowEngineException;
 import com.wty.flowengine.sdk.exec.vo.Token;
 import org.assertj.core.util.Strings;

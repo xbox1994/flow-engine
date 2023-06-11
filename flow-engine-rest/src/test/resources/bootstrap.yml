@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: flow-engine-rest-demo
+
+server:
+  port: 7001

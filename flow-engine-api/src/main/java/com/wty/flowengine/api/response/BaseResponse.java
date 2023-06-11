@@ -1,8 +1,12 @@
 package com.wty.flowengine.api.response;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class BaseResponse<T> {
 
     /**
@@ -20,12 +24,6 @@ public class BaseResponse<T> {
      */
     private T body;
 
-    public BaseResponse(int code, String msg, T body) {
-        this.code = code;
-        this.msg = msg;
-        this.body = body;
-    }
-
     public static <T> BaseResponse<T> ok(T body) {
         return new BaseResponse<>(0, "success", body);
     }
@@ -33,6 +31,5 @@ public class BaseResponse<T> {
     public static <T> BaseResponse<T> fail(int code, String msg) {
         return new BaseResponse<>(code, msg, null);
     }
-
 
 }

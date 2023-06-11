@@ -1,7 +1,7 @@
 package com.wty.flowengine.sdk.exec.behavior;
 
-import com.wty.flow.model.Decision;
-import com.wty.flow.model.SequenceFlow;
+import com.wty.flowengine.rest.demo.test.model.Decision;
+import com.wty.flowengine.rest.demo.test.model.SequenceFlow;
 import com.wty.flowengine.engine.common.api.FlowEngineException;
 import com.wty.flowengine.sdk.exec.util.ConditionUtil;
 import com.wty.flowengine.sdk.exec.vo.Token;

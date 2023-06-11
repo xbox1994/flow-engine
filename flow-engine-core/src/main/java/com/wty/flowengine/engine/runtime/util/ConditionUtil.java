@@ -1,6 +1,6 @@
 package com.wty.flowengine.engine.runtime.util;
 
-import com.wty.flow.model.SequenceFlow;
+import com.wty.flowengine.rest.demo.test.model.SequenceFlow;
 import com.wty.flowengine.engine.ProcessEngineConfiguration;
 import com.wty.flowengine.engine.common.api.FlowEngineException;
 import com.wty.flowengine.engine.common.script.GroovyScriptExecutor;

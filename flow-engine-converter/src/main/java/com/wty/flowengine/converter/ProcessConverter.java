@@ -2,7 +2,7 @@ package com.wty.flowengine.converter;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wty.flow.model.Process;
+import com.wty.flowengine.rest.demo.test.model.Process;
 import com.wty.flowengine.converter.exception.ConvertException;
 import com.wty.flowengine.converter.factory.ProcessFactory;
 

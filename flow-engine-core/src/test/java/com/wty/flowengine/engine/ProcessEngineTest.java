@@ -3,6 +3,7 @@ package com.wty.flowengine.engine;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import com.wty.flowengine.engine.common.utils.JsonUtil;
 import com.wty.flowengine.engine.domain.ActivityTask;
 import com.wty.flowengine.engine.domain.Deployment;
@@ -182,6 +183,25 @@ public class ProcessEngineTest {
         Thread.sleep(2000);
         // 查看流程实例的状态和流程日志
         showProcessLog(instance.getId());
+    }
+
+    @Test
+    public void testFlow() throws IOException, InterruptedException {
+//        Deployment deployment = deployFromFile("processes/flow-test.json");
+//        System.out.println(deployment.getId());
+
+        Map<String, Object> variables = Maps.newHashMap();
+        // 业务流中的判断条件
+        variables.put("pullMode", 2);
+        variables.put("supplyType", 3);
+        // 核心数据
+        variables.put("outwardCreateMessage", "testsss");
+        // 启动流程
+        String bizId = String.valueOf(System.currentTimeMillis());
+        Execution execution = processEngine.getRuntimeService().startByKey("testProcess", bizId, variables);
+        System.out.println("启动流程实例成功：" + JsonUtil.toJson(execution));
+        Thread.sleep(10000);
+        System.out.println("查看流程实例的状态和流程日志");
     }
 
 }

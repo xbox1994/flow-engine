@@ -2,7 +2,7 @@ package com.wty.flowengine.engine.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.wty.flow.model.Process;
+import com.wty.flowengine.rest.demo.test.model.Process;
 import com.wty.flowengine.converter.ProcessConverter;
 import com.wty.flowengine.engine.ProcessEngineConfiguration;
 import com.wty.flowengine.engine.common.api.FlowEngineException;

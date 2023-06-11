@@ -1,6 +1,6 @@
 package com.wty.flowengine.converter.exception;
 
-import com.wty.flow.model.FlowElement;
+import com.wty.flowengine.rest.demo.test.model.FlowElement;
 
 public class InvalidProcessException extends InvalidFlowElementException{
 

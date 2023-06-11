@@ -1,8 +1,8 @@
 package com.wty.flowengine.converter.factory;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.wty.flow.model.CallActivity;
-import com.wty.flow.model.FlowElement;
+import com.wty.flowengine.rest.demo.test.model.CallActivity;
+import com.wty.flowengine.rest.demo.test.model.FlowElement;
 import com.wty.flowengine.converter.constants.Field;
 import com.wty.flowengine.converter.exception.InvalidFlowElementException;
 import com.wty.flowengine.converter.util.FlowElementUtil;

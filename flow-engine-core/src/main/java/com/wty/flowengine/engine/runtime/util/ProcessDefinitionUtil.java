@@ -1,8 +1,8 @@
 package com.wty.flowengine.engine.runtime.util;
 
-import com.wty.flow.model.FlowElement;
-import com.wty.flow.model.FlowNode;
-import com.wty.flow.model.Process;
+import com.wty.flowengine.rest.demo.test.model.FlowElement;
+import com.wty.flowengine.rest.demo.test.model.FlowNode;
+import com.wty.flowengine.rest.demo.test.model.Process;
 import com.wty.flowengine.engine.ProcessEngineConfiguration;
 import com.wty.flowengine.engine.domain.ProcessDefinition;
 

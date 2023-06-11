@@ -2,12 +2,12 @@ package com.wty.flowengine.converter.factory;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.base.Strings;
-import com.wty.flow.model.Process;
-import com.wty.flow.model.*;
+import com.wty.flowengine.rest.demo.test.model.*;
 import com.wty.flowengine.converter.constants.Field;
 import com.wty.flowengine.converter.exception.InvalidFlowElementException;
 import com.wty.flowengine.converter.exception.InvalidProcessException;
 import com.wty.flowengine.converter.util.FlowElementUtil;
+import com.wty.flowengine.rest.demo.test.model.Process;
 
 import java.util.ArrayList;
 import java.util.HashMap;

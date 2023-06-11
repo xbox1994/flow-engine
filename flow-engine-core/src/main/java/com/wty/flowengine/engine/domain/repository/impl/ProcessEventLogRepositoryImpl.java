@@ -1,8 +1,8 @@
 package com.wty.flowengine.engine.domain.repository.impl;
 
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
-import com.wty.flow.model.FlowElement;
-import com.wty.flow.model.FlowNode;
+import com.wty.flowengine.rest.demo.test.model.FlowElement;
+import com.wty.flowengine.rest.demo.test.model.FlowNode;
 import com.wty.flowengine.engine.ProcessEngineConfiguration;
 import com.wty.flowengine.engine.domain.ActivityTask;
 import com.wty.flowengine.engine.domain.Execution;

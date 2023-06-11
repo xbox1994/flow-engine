@@ -16,6 +16,7 @@
         <module>flow-engine-common</module>
         <module>flow-engine-rest</module>
         <module>flow-engine-api</module>
+        <module>flow-engine-rest</module>
     </modules>
 
     <properties>
@@ -25,6 +26,26 @@
         <guava.version>31.1-jre</guava.version>
         <mybatis.version>3.5.10</mybatis.version>
         <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.cloud.version>Hoxton.SR3</spring.cloud.version>
+        <spring.boot.version>2.2.6.RELEASE</spring.boot.version>
+        <commons.version>2.6</commons.version>
+        <druid.version>1.1.22</druid.version>
+        <mybatis-plus.version>3.3.1</mybatis-plus.version>
+        <p6spy.version>3.9.0</p6spy.version>
+        <baomidou.dynamic-datasource.version>2.5.2</baomidou.dynamic-datasource.version>
+        <junit.version>4.12</junit.version>
+        <spring.boot.dependencies.version>2.2.6.RELEASE</spring.boot.dependencies.version>
+        <springfox.swagger.version>2.9.2</springfox.swagger.version>
+        <swagger-bootstrap-ui>1.9.6</swagger-bootstrap-ui>
+        <jwt.version>0.9.0</jwt.version>
+        <codehaus.janino.version>2.6.1</codehaus.janino.version>
+        <feign-httpclient.version>10.1.0</feign-httpclient.version>
+        <spring-cloud.alibaba.version>2.2.6.RELEASE</spring-cloud.alibaba.version>
+        <flow-engine.version>1.0-SNAPSHOT</flow-engine.version>
+        <ils.component.version>4.0.1-SNAPSHOT</ils.component.version>
+        <com.alibaba.fastjson.version>1.2.73</com.alibaba.fastjson.version>
     </properties>
 
     <dependencyManagement>

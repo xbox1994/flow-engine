@@ -1,7 +1,7 @@
 package com.wty.flowengine.engine.runtime.behavior;
 
-import com.wty.flow.model.FlowElement;
-import com.wty.flow.model.ServiceTask;
+import com.wty.flowengine.rest.demo.test.model.FlowElement;
+import com.wty.flowengine.rest.demo.test.model.ServiceTask;
 import com.wty.flowengine.converter.constants.FlowElementType;
 import com.wty.flowengine.converter.util.FlowElementUtil;
 import com.wty.flowengine.engine.domain.Execution;

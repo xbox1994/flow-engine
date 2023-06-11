@@ -2,6 +2,7 @@ package com.wty.flowengine.converter;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.wty.flowengine.rest.demo.test.model.Process;
 import org.junit.jupiter.api.Test;
 
 import java.io.InputStream;

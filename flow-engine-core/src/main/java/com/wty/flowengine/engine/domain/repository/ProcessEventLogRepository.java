@@ -1,6 +1,6 @@
 package com.wty.flowengine.engine.domain.repository;
 
-import com.wty.flow.model.FlowNode;
+import com.wty.flowengine.rest.demo.test.model.FlowNode;
 import com.wty.flowengine.engine.domain.ActivityTask;
 import com.wty.flowengine.engine.domain.Execution;
 import com.wty.flowengine.engine.domain.ProcessEventLog;

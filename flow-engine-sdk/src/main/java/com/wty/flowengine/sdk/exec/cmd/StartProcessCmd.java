@@ -1,7 +1,7 @@
 package com.wty.flowengine.sdk.exec.cmd;
 
-import com.wty.flow.model.FlowElement;
-import com.wty.flow.model.FlowNode;
+import com.wty.flowengine.rest.demo.test.model.FlowElement;
+import com.wty.flowengine.rest.demo.test.model.FlowNode;
 import com.wty.flowengine.engine.common.command.Command;
 import com.wty.flowengine.engine.common.command.CommandContext;
 import com.wty.flowengine.sdk.ProcessExecutorConfiguration;
